@@ -2,6 +2,7 @@
 let main = document.getElementsByClassName("main__container") [0];
 let input = document.getElementById("main-input");
 input.value = 1;
+let submit = document.getElementById("submit");
 let randomNumber = document.getElementById("random-num");
 let buttonNums = document.getElementById("random-num-checked");
 let numsBox = document.getElementsByClassName("numbers-box");
@@ -68,4 +69,22 @@ input.addEventListener("keypress", function(event) {
         buttonNums.innerText = checkedRandomNum(arrayButtonNums);
         lastInputValue = randomNumber.innerText * buttonNums.innerText;
     }
+});
+
+submit.addEventListener("click", function(event) {
+    
+        event.preventDefault();
+        
+        if (input.value == lastInputValue) {
+            console.log('+');
+            changeColor('#058B32', 500);
+        } else {
+            console.log('-');
+            changeColor('#e85f5f', 500);
+        }
+
+        randomNumber.innerText = randomNum();
+        buttonNums.innerText = checkedRandomNum(arrayButtonNums);
+        lastInputValue = randomNumber.innerText * buttonNums.innerText;
+    
 });

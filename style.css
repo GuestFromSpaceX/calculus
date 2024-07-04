@@ -46,6 +46,13 @@ body {
     margin: 50px 50px;
     border: solid 1px black;
     background-color: var(--white);
+    
+}
+
+.calculus__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .calculus__input {
@@ -60,6 +67,23 @@ body {
     border: none;
     font-size: 200%;
     background-color: var(--white);
+}
+
+#submit {
+    background-color: rgb(249, 252, 253);;
+    border: 0px;
+    font-family: "Montserrat", sans-serif;
+    transition: .5s;
+    box-shadow: -10px -10px 15px rgba(255,255,255,0.5),
+                10px 10px 15px rgba(70,70,70,0.12);
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+#submit:active {
+    box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5), 
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+    background-color: var(--gray);
 }
 
 .buttons {
