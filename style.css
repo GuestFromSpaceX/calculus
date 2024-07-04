@@ -1,0 +1,90 @@
+:root {
+    --white: rgb(240, 244, 248);
+    --gray: rgb(233, 235, 237);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--white);
+}
+
+.header__container {
+    max-width: 1440px;
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+
+.main__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    transition: .5s;
+}
+
+.calculus {
+    margin: 50px 50px;
+    border: solid 1px black;
+    background-color: var(--white);
+}
+
+.calculus__input {
+    margin: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculus__input form input {
+    width: 44px;
+    border: none;
+    font-size: 200%;
+    background-color: var(--white);
+}
+
+.buttons {
+    margin: 10px 15px ;
+}
+
+.button-container form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.button-container label{
+    cursor: pointer;
+}
+
+.button-container label div {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -10px -10px 15px rgba(255,255,255,0.5),
+                10px 10px 15px rgba(70,70,70,0.12);
+    border-radius: 10px;
+    background-color: rgb(249, 252, 253);;
+}
+
+.button-container label input {
+    display: none;
+}
+
+.button-container label input:checked + div {
+    box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5), 
+                inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+    background-color: var(--gray);
+}
