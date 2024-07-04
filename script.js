@@ -68,6 +68,7 @@ input.addEventListener("keypress", function(event) {
         randomNumber.innerText = randomNum();
         buttonNums.innerText = checkedRandomNum(arrayButtonNums);
         lastInputValue = randomNumber.innerText * buttonNums.innerText;
+        input.value = '';
     }
 });
 
@@ -86,5 +87,5 @@ submit.addEventListener("click", function(event) {
         randomNumber.innerText = randomNum();
         buttonNums.innerText = checkedRandomNum(arrayButtonNums);
         lastInputValue = randomNumber.innerText * buttonNums.innerText;
-    
+        input.value = '';
 });
