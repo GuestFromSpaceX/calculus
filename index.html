@@ -13,11 +13,21 @@
     <header>
         <div class="header__container">
             <h1>Calculus</h1>
+            <nav>
+                <ul>
+                    <li class="power-button">
+                        <a>Таблица умножения</a>
+                    </li>
+                    <li class="root-button">
+                        <a>Квадратные корни</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
     <hr>
     <main>
-        <div class="main__container">
+        <div class="main__container power">
             <p>Здесь можно потренировать свои базовые вычислительные навыки</p>
             <div class="calculus">
                 <div class="calculus__top">
@@ -85,6 +95,21 @@
                             </label>
                         </form>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__container roots">
+            <div class="roots__top">
+                <p>Здесь можно потренировать вычисление корней</p>
+                <div class="roots__input">
+                    <div>
+                        <h2>√<span id="root-num"></span>=</h2>
+                    </div>
+                    <form action="">
+                        <input id="roots-input" type="text" maxlength="2">
+                    </form>
+                    <h2><pre>² </pre></h2>
+                    <button id="roots-submit">Submit</button>
                 </div>
             </div>
         </div>

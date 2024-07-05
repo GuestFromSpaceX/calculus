@@ -1,13 +1,23 @@
 'use strict'
+let realMain = document.querySelector("main");
 let main = document.getElementsByClassName("main__container") [0];
 let input = document.getElementById("main-input");
+let inputRoots = document.getElementById("roots-input");
 input.value = 1;
 let submit = document.getElementById("submit");
+let submitRoots = document.getElementById("roots-submit");
 let randomNumber = document.getElementById("random-num");
 let buttonNums = document.getElementById("random-num-checked");
 let numsBox = document.getElementsByClassName("numbers-box");
 let arrayButtonNums = [];
 let lastInputValue = input.value;
+
+let power = document.querySelector(".power");
+let roots = document.querySelector(".roots");
+let powerButton = document.querySelector(".power-button");
+let rootsButton = document.querySelector(".root-button");
+let rootNum = document.getElementById("root-num");
+rootNum.innerText = randomNum(20, 2) ** 2;
 
 input.focus();
 console.log(numsBox[0].id);
@@ -34,12 +44,12 @@ function checkedRandomNum(array) {
     }
 }
 
-function changeColor(color, duration) {
-    const originalBackground = main.style.backgroundColor;
+function changeColor(color, duration, elem) {
+    const originalBackground = elem.style.backgroundColor;
 
-    main.style.backgroundColor = color;
+    elem.style.backgroundColor = color;
 
-    setTimeout(() => {main.style.backgroundColor = originalBackground}, duration);
+    setTimeout(() => {elem.style.backgroundColor = originalBackground}, duration);
 }
 
 buttonNums.innerText = 1;
@@ -51,18 +61,15 @@ Array.from(numsBox).forEach(elem => {
 
 updateArray();
 
-console.log(input.value)
 
 input.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         event.preventDefault();
         
         if (input.value == lastInputValue) {
-            console.log('+');
-            changeColor('#058B32', 500);
+            changeColor('#058B32', 500, main);
         } else {
-            console.log('-');
-            changeColor('#e85f5f', 500);
+            changeColor('#e85f5f', 500, main);
         }
 
         randomNumber.innerText = randomNum();
@@ -72,20 +79,61 @@ input.addEventListener("keypress", function(event) {
     }
 });
 
+
 submit.addEventListener("click", function(event) {
     
-        event.preventDefault();
-        
-        if (input.value == lastInputValue) {
-            console.log('+');
-            changeColor('#058B32', 500);
-        } else {
-            console.log('-');
-            changeColor('#e85f5f', 500);
-        }
-
-        randomNumber.innerText = randomNum();
-        buttonNums.innerText = checkedRandomNum(arrayButtonNums);
-        lastInputValue = randomNumber.innerText * buttonNums.innerText;
-        input.value = '';
+    event.preventDefault();
+    
+    if (input.value == lastInputValue) {
+        console.log('+');
+        changeColor('#058B32', 500, main);
+    } else {
+        console.log('-');
+        changeColor('#e85f5f', 500, main);
+    }
+    
+    randomNumber.innerText = randomNum();
+    buttonNums.innerText = checkedRandomNum(arrayButtonNums);
+    lastInputValue = randomNumber.innerText * buttonNums.innerText;
+    input.value = '';
+    input.focus();
 });
+
+inputRoots.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+
+        if (inputRoots.value == Math.sqrt(rootNum.innerText) ) {
+            changeColor('#058B32', 500, realMain);
+            rootNum.innerText = randomNum(20, 2) ** 2;
+            inputRoots.value = "";
+            inputRoots.focus();
+        } else {
+            changeColor('#e85f5f', 500, realMain);
+        }
+    }
+})
+
+submitRoots.addEventListener("click", function(event) {
+    if (inputRoots.value == Math.sqrt(rootNum.innerText) ) {
+        changeColor('#058B32', 500, realMain);
+        rootNum.innerText = randomNum(20, 2) ** 2;
+        inputRoots.value = "";
+        inputRoots.focus();
+    } else {
+        changeColor('#e85f5f', 500, realMain);
+        inputRoots.focus()
+    }
+})
+
+powerButton.addEventListener("click", function(event) {
+    power.style.display = "flex";
+    input.focus();
+    roots.style.display = "none";
+})
+
+rootsButton.addEventListener("click", function(event) {
+    roots.style.display = "flex";
+    inputRoots.focus();
+    power.style.display = "none";
+})

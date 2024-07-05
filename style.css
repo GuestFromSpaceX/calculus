@@ -8,6 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
+    list-style: none;
 }
 
 a {
@@ -27,6 +28,34 @@ body {
     max-width: 1440px;
     padding: 10px 20px;
     margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__container nav ul {
+    display: flex;
+    gap: 10px;
+    transition: .5s;
+}
+
+.header__container nav ul li {
+   transition: font-size .5s;
+}
+
+.header__container nav ul li:hover {
+    font-size: 18px;
+    transition: .5s;
+}
+
+.header__container nav ul li:active {
+    font-size: 19px;
+    transition: .1s;
+}
+
+main {
+    transition: .5s;
 }
 
 .main__container {
@@ -36,6 +65,30 @@ body {
     align-items: center;
     background-color: var(--white);
     transition: .5s;
+}
+
+.main__container p {
+    text-align: center;
+}
+
+.roots {
+    display: none;
+    max-width: 500px;
+    border: 1px solid black;
+    margin: 50px auto;
+}
+
+.roots__top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 50px;
+}
+
+.roots__input {
+    display: flex;
+    align-items: center;
 }
 
 .main__container p {
@@ -62,14 +115,16 @@ body {
     align-items: center;
 }
 
-.calculus__input form input {
+.calculus__input form input,
+#roots-input {
     width: 44px;
     border: none;
     font-size: 200%;
     background-color: var(--white);
 }
 
-#submit {
+#submit,
+#roots-submit {
     background-color: rgb(249, 252, 253);;
     border: 0px;
     font-family: "Montserrat", sans-serif;
@@ -80,7 +135,12 @@ body {
     padding: 10px 10px;
 }
 
-#submit:active {
+#roots-submit {
+    margin: 0 0 0 10px;
+}
+
+#submit:active,
+#roots-submit:active {
     box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5), 
     inset 10px 10px 15px rgba(70, 70, 70, 0.12);
     background-color: var(--gray);
