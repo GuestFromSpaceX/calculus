@@ -86,6 +86,33 @@ main {
     margin: 50px 50px;
 }
 
+.roots__top label {
+    margin: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.roots__top input {
+}
+
+datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    width: 200px;
+  }
+  
+option {
+   padding: 0;
+}
+  
+input[type="range"] {
+    width: 200px;
+    margin: 0;
+}
+
 .roots__input {
     display: flex;
     align-items: center;

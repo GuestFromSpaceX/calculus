@@ -17,10 +17,12 @@ let roots = document.querySelector(".roots");
 let powerButton = document.querySelector(".power-button");
 let rootsButton = document.querySelector(".root-button");
 let rootNum = document.getElementById("root-num");
-rootNum.innerText = randomNum(20, 2) ** 2;
-
+let slider = document.getElementById("range");
+let sliderNum = document.getElementById("slider-num")
+rootNum.innerText = randomNum(slider.value, 2) ** 2;
+sliderNum.innerText = slider.value;
+console.log(slider.value);
 input.focus();
-console.log(numsBox[0].id);
 
 function updateArray() {
     arrayButtonNums = [];
@@ -85,10 +87,8 @@ submit.addEventListener("click", function(event) {
     event.preventDefault();
     
     if (input.value == lastInputValue) {
-        console.log('+');
         changeColor('#058B32', 500, main);
     } else {
-        console.log('-');
         changeColor('#e85f5f', 500, main);
     }
     
@@ -105,7 +105,7 @@ inputRoots.addEventListener("keypress", function(event) {
 
         if (inputRoots.value == Math.sqrt(rootNum.innerText) ) {
             changeColor('#058B32', 500, realMain);
-            rootNum.innerText = randomNum(20, 2) ** 2;
+            rootNum.innerText = randomNum(slider.value, 2) ** 2;
             inputRoots.value = "";
             inputRoots.focus();
         } else {
@@ -117,7 +117,7 @@ inputRoots.addEventListener("keypress", function(event) {
 submitRoots.addEventListener("click", function(event) {
     if (inputRoots.value == Math.sqrt(rootNum.innerText) ) {
         changeColor('#058B32', 500, realMain);
-        rootNum.innerText = randomNum(20, 2) ** 2;
+        rootNum.innerText = randomNum(slider.value, 2) ** 2;
         inputRoots.value = "";
         inputRoots.focus();
     } else {
@@ -136,4 +136,9 @@ rootsButton.addEventListener("click", function(event) {
     roots.style.display = "flex";
     inputRoots.focus();
     power.style.display = "none";
+})
+
+slider.addEventListener("change", function(event) {
+    sliderNum.innerText = slider.value;
+    console.log(slider.value)
 })
