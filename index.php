@@ -79,7 +79,7 @@
 
 <?php 
     
-    $script = 'index';
+    $script = 'power';
     require_once('./footer.php');
 
 ?>
