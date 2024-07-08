@@ -4,16 +4,16 @@
         "runtime": "vercel-php@1.0.0"
       },
       "api/footer.js": {
-        "runtime": "nodejs16.x"
+        "runtime": "vercel-nodejs@16.x"
       },
       "api/header.js": {
-        "runtime": "nodejs16.x"
+        "runtime": "vercel-nodejs@16.x"
       },
       "api/index.js": {
-        "runtime": "nodejs16.x"
+        "runtime": "vercel-nodejs@16.x"
       },
       "api/roots.js": {
-        "runtime": "nodejs16.x"
+        "runtime": "vercel-nodejs@16.x"
       }
     }
   }
