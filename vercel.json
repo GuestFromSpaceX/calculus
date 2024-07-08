@@ -2,6 +2,19 @@
     "functions": {
       "api/*.php": {
         "runtime": "vercel-php@0.6.0"
+      },
+      "api/footer.js": {
+        "runtime": "nodejs16.x"
+      },
+      "api/header.js": {
+        "runtime": "nodejs16.x"
+      },
+      "api/index.js": {
+        "runtime": "nodejs16.x"
+      },
+      "api/roots.js": {
+        "runtime": "nodejs16.x"
       }
     }
   }
+  
