@@ -62,7 +62,7 @@
 </main>
 
 <?php 
-    $script = 'roots';
+    $script = 'rootsjs';
     require_once('./footer.php');
 
 ?>
