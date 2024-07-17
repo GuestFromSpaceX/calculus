@@ -1,6 +1,7 @@
 <?php 
     $title = 'Таблица умножения';
-    require_once('./header.php');
+    $style = '../../styles/style.css';
+    require_once('../../components/header.php');
 
 ?>
 <main>
@@ -80,6 +81,6 @@
 <?php 
     
     $script = 'power';
-    require_once('./footer.php');
+    require_once('../../components/footer.php');
 
 ?>

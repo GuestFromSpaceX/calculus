@@ -1,0 +1,15 @@
+
+.reg {
+    margin: 30px auto;
+    &__container {
+        form {
+            display:flex;
+            flex-direction: column;
+            gap: 20px;
+            label {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

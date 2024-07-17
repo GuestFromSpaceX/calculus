@@ -1,0 +1,59 @@
+.roots {
+    max-width: 500px;
+    border: 1px solid black;
+    margin: 50px auto;
+    &__top {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 50px;
+        label {
+            margin: 30px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            input {
+                width: 200px;
+                margin: 0;
+            }
+        }
+    }
+    &__input {
+        display: flex;
+        align-items: center;
+    }
+}
+
+#roots-input {
+    width: 44px;
+    border: none;
+    font-size: 200%;
+    background-color: var(--white);
+    &::placeholder {
+        color: var(--gray)
+    }
+}
+
+#submit,
+#roots-submit {
+    background-color: rgb(249, 252, 253);;
+    border: 0px;
+    font-family: "Montserrat", sans-serif;
+    transition: .5s;
+    box-shadow: -10px -10px 15px rgba(255,255,255,0.5),
+                10px 10px 15px rgba(70,70,70,0.12);
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+#roots-submit {
+    margin: 0 0 0 10px;
+}
+
+#submit:active,
+#roots-submit:active {
+    box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5), 
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+    background-color: var(--gray);
+}
